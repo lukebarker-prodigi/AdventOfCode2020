@@ -18,9 +18,9 @@ namespace ConsoleApp
         
         static async Task Main(string[] args)
         {
-            await ExecuteDay(1);
-            await ExecuteDay(2);
-            // await ExecuteDay(3); 
+            // await ExecuteDay(1);
+            // await ExecuteDay(2);
+            await ExecuteDay(3); 
         }
 
         static async Task ExecuteDay(int dayNumber)
