@@ -7,15 +7,19 @@ namespace ConsoleApp
 {
     public class Day2 : IDay
     {
+        private List<PasswordRow> _extractedPasswords;
+        
         public string[] RawInput { get; set; }
         
         public async Task Part1Async()
         {
             RawInput = await AdventOfCodeHelper.ReadInputForDayAsync(2);
 
+            _extractedPasswords = ExtractPasswordRows(RawInput);
+
             var validPasswordCount = 0;
 
-            foreach (var passwordRow in ExtractPasswordRows(RawInput))
+            foreach (var passwordRow in _extractedPasswords)
             {
                 validPasswordCount += Convert.ToInt32(passwordRow.PasswordStringIsValid());
             }
@@ -27,7 +31,7 @@ namespace ConsoleApp
         {
             var validPasswordCount = 0;
 
-            foreach (var passwordRow in ExtractPasswordRows(RawInput))
+            foreach (var passwordRow in _extractedPasswords)
             {
                 validPasswordCount += Convert.ToInt32(passwordRow.PasswordStringIsValidPart2());
             }
