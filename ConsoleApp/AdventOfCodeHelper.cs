@@ -8,11 +8,12 @@ namespace ConsoleApp
     {
         private const string InputsFolder = "Inputs";
 
-        public static async Task<string[]> ReadInputForDayAsync(int dayNumber)
+        public static async Task<string[]> ReadInputForDayAsync(int dayNumber, bool useSample = false)
         {
             ValidateDayNumber(dayNumber);
+            var fileName = string.Concat($"Day{dayNumber}", useSample ? "Sample" : string.Empty, ".txt");
 
-            return await File.ReadAllLinesAsync(Path.Combine(InputsFolder, $"Day{dayNumber}.txt"));
+            return await File.ReadAllLinesAsync(Path.Combine(InputsFolder, fileName));
         }
 
         public static void ValidateDayNumber(int dayNumber)
