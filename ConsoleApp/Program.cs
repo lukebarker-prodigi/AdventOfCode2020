@@ -22,7 +22,8 @@ namespace ConsoleApp
             // await ExecuteDay(2);
             // await ExecuteDay(3);
             // await ExecuteDay(4);
-            await ExecuteDay(5);
+            // await ExecuteDay(5);
+            await ExecuteDay(6);
         }
 
         static async Task ExecuteDay(int dayNumber)
