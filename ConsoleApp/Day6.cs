@@ -54,7 +54,7 @@ namespace ConsoleApp
                     }
                 }
                 
-                
+                // answers.Length represents the number of people in each group!
                 var lettersWhereAllAnsweredYes = answersDict.Count(kvp => kvp.Value == answers.Length);
                 totalAnswers += lettersWhereAllAnsweredYes;
             }
